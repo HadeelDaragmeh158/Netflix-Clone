@@ -5,7 +5,9 @@ import './Movie.css';
 function Movie(mov) {
     const[cardInfo,setCardInfo]=useState({});
     const[show,setShow]=useState(false);
-  
+   const handleClose = () =>{
+        setShow(false);
+    } 
     return (
     <>
     <div>
@@ -27,6 +29,9 @@ function Movie(mov) {
             </Card>
         </Col>
         </Row>
+        {
+         <ModalMovie CardInfo={CardInfo} show = {show} handleClose = {handleClose}/>
+     }
     </div>
     </>)
 }
