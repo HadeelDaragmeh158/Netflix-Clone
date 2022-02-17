@@ -1,17 +1,38 @@
-.body{
+.div{
+    margin-top: 20px;
     display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
+}
+.div-container{
+    display: flex;
     flex-direction: column;
+
 }
-.body img{
-  width: 29rem;
+.div-card{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    height: 31rem;
+   
 }
-.body div{
-    width: 29rem;
-    border: 1px solid lightgray;
-    padding: 10px;
-  margin: 20px 0px;
-  display: flex;
-  flex-direction: column;
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }
+
+/* .div-card-img{
+    height: 15rem;
+}
+.div-card-title{
+    height: 3rem;
+}
+.div-card-link{
+    height: 5rem;
+}
+.div-card-button{
+    margin: 10px 0;
+    height: 3rem;
+} */

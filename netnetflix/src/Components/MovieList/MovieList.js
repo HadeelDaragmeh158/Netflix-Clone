@@ -1,29 +1,28 @@
-
+import { Container, Row } from 'react-bootstrap';
 import Movie from '../Movie/Movie';
-import { useState, useEffect } from 'react';
-import Modal from '../ModalMovie/ModalMovie';
 
 
 
-function MovieList(prop) {
-    const [cardInfo, setCardInfo] = useState({});
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+function MovieList({ data }) {
 
-    return (<>
-        {
-            prop.data.length && prop.data.map((data, indx) => (
-                <div key={indx}>
-                <Movie data={data} setCardInfo={setCardInfo }  setShow={setShow}/>
-                </div>
-            ))
-        }
-            {
-                <Modal cardInfo={cardInfo} show={show} handleClose={handleClose} />
-            }
-        {
-            !prop.data.length && <div><h2> No Such Resulte,Please try again later</h2></div>
-        }
-    </>)
+    return (
+        <>
+        
+            <Container className='div-container'>
+                <Row md={3}>
+                    {
+                        data.length && data.map((mov, indx) => (
+                            <div key={indx}>
+                                <Movie mov={mov} />
+                            </div>
+                        ))
+                    }
+
+                    {
+                        !data.length && <div><h2> No Such Resulte,Please try again later</h2></div>
+                    }
+                </Row>
+            </Container>
+        </>)
 }
 export default MovieList;
