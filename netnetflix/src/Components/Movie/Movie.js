@@ -6,8 +6,12 @@ import axios from 'axios';
 function Movie({mov}) {
     const[CardInfo,setCardInfo]=useState({});
     const[show,setShow]=useState(false);
+
   
     const handleClose = () =>{
+
+   const handleClose = () =>{
+
         setShow(false);
     } 
     return (
@@ -35,10 +39,18 @@ function Movie({mov}) {
                     </div>
                 </Card.Body>
             </Card>
+
      {
          <ModalMovie CardInfo={CardInfo} show = {show} handleClose = {handleClose}/>
      }
        
+
+        </Col>
+        </Row>
+        {
+         <ModalMovie CardInfo={CardInfo} show = {show} handleClose = {handleClose}/>
+     }
+
     </div>
     </>)
 }
